@@ -51,6 +51,13 @@ void check_ip(std::string ip) {
         return;
     }
 
+    //проверка количества точек
+    size_t dots_count = std::count(ip.begin(), ip.end(), '.');
+    if (dots_count != 3) {
+        std::cout << "Неверное количество точек. Должно быть ровно 3.\n";
+        return;
+    }
+
     //проверка правильности каждого октета
     for (int i = 0; i < 4; ++i) {
         std::string octet = get_octet(ip, i);
